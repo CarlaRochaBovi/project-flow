@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1752724335368,
+      "tag": "0000_reflective_squadron_supreme",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1752791532769,
+      "tag": "0001_silent_landau",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752791686497,
+      "tag": "0002_productive_lizard",
+      "breakpoints": true
+    }
+  ]
+}
