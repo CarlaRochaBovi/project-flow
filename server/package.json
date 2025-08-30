@@ -12,14 +12,12 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "^2.1.1",
     "@types/node": "^24.0.14",
-    "drizzle-kit": "^0.31.4",
+    "drizzle-kit": "^0.18.1",
     "drizzle-seed": "^0.3.1",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.6.2",
-    "typescript": "^5.8.3",
-    "ultracite": "^5.0.36"
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@fastify/cors": "^11.0.1",
