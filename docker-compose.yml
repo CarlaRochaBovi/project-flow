@@ -1,12 +1,17 @@
-# Configurando docker
+version: '3.8'
+
 services:
-  projects-pg:
+  db:
     image: pgvector/pgvector:pg17
+    env_file: .env  # ← melhora: senhas fora do YAML
     environment:
-      POSTGRES_USER: docker
-      POSTGRES_PASSWORD: docker
       POSTGRES_DB: projects
     ports:
       - "5432:5432"
     volumes:
+      - postgres_data:/var/lib/postgresql/data
       - ./docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

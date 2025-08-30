@@ -16,7 +16,7 @@ export const listProjectsRoute: FastifyPluginCallbackZod = (app) => {
                 name: z.string(),
                 description: z.string().nullable().optional(),
                 createdAt: z.date(),
-              })
+              }),
             ),
             message: z.string(),
           }),
@@ -37,20 +37,18 @@ export const listProjectsRoute: FastifyPluginCallbackZod = (app) => {
           .from(schema.projects)
           .orderBy(schema.projects.createdAt);
 
-        return reply
-          .status(200)
-          .send({
-            projects,
-            message:
-              projects.length === 0
-                ? "No projects found!"
-                : `${projects.length} project(s) found!`,
-          });
+        return reply.status(200).send({
+          projects,
+          message:
+            projects.length === 0
+              ? "No projects found!"
+              : `${projects.length} project(s) found!`,
+        });
       } catch (error) {
         return reply.status(500).send({
           error: "Server error...",
         });
       }
-    }
+    },
   );
 };

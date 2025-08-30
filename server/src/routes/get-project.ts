@@ -34,31 +34,30 @@ export const getProjectRoute: FastifyPluginCallbackZod = (app) => {
     async (req, reply) => {
       try {
         const { projectId } = req.params;
-        
+
         const [project] = await db
           .select()
           .from(schema.projects)
           .where(eq(schema.projects.id, projectId));
-        
+
         if (!project) {
           return reply.status(404).send({
             error: "Project not found",
           });
         }
-        
+
         return reply.status(200).send({
           id: project.id,
           name: project.name,
           description: project.description,
           createdAt: project.createdAt,
         });
-        
       } catch (error) {
         console.error("Error fetching project:", error);
         return reply.status(500).send({
           error: "Internal server error",
         });
       }
-    }
+    },
   );
 };

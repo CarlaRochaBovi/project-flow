@@ -1,0 +1,31 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:up": "docker-compose up -d",
+    "db:down": "docker-compose down",
+    "db:logs": "docker-compose logs -f",
+    "dev:server": "cd server && npm run dev",
+    "dev:web": "cd web && npm run dev",
+    "dev": "concurrently --kill-others-on-exit \"npm run db:up\" \"npm run wait:db\" \"npm run dev:server\" \"npm run dev:web\"",
+    "wait:db": "wait-on tcp:5432 --timeout 30000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlaRochaBovi/project-flow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CarlaRochaBovi/project-flow/issues"
+  },
+  "homepage": "https://github.com/CarlaRochaBovi/project-flow#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "wait-on": "^8.0.4"
+  }
+}

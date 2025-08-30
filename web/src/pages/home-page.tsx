@@ -86,8 +86,7 @@ export function HomePage() {
         {projects.length === 0 || projects === null ? (
           <p className="font-light text-lg text-zinc-500">Out of projects</p>
         ) : (
-            projects?.map((project: Project) => (
-            
+          projects?.map((project: Project) => (
             <ProjectCard
               getProjects={getProjects}
               deleteProject={deleteProject}

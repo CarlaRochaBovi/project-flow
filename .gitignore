@@ -1,0 +1,40 @@
+# Node modules
+node_modules/
+web/node_modules/
+server/node_modules/
+
+# Build outputs
+web/dist/
+web/build/
+server/dist/
+server/build/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Docker
+# (geralmente não precisa ignorar Dockerfiles, mas se gerar contextos temporários)
+docker-context/
+
+# Database (se usar SQLite local)
+server/*.db
+server/*.sqlite
+
+# Cache do Drizzle (se aplicável)
+drizzle-output/

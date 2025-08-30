@@ -95,7 +95,6 @@ export function ProjectPage() {
 
   async function getProject() {
     try {
-      console.log('123123123')
       const response = await api.get(`/projects/${projectId}`)
       setProject(response.data)
       return response.data
